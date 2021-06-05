@@ -23,10 +23,10 @@ class PSO:
         
         self.fun_values = np.array(list(map(self.fitFunction, \
                                     self.particles[0,:], self.particles[1,:])))
-        self.p_best_vals = self.fun_values
         self.p_best = self.particles
-        self.g_best_val = np.min(self.fun_values)
+        self.p_best_vals = self.fun_values
         self.g_best = self.particles[:, int(np.argmin(self.fun_values))]
+        self.g_best_val = np.min(self.fun_values)
         
         self.iter = 1
         '''
@@ -69,9 +69,8 @@ class PSO:
                                         self.particles[0,:], self.particles[1,:])))
             
             # updates of minima positions and values
+            self.p_best[:,self.fun_values < self.p_best_vals] = self.particles[:,self.fun_values < self.p_best_vals]
             self.p_best_vals = np.minimum(self.p_best_vals, self.fun_values)
-            self.p_best[:,self.p_best_vals < self.fun_values] = self.p_best[:,self.p_best_vals < self.fun_values]
-            self.p_best[:,self.p_best_vals > self.fun_values] = self.particles[:,self.p_best_vals > self.fun_values]
             
             new_g_best_val = np.min(np.minimum(self.g_best_val, self.fun_values))
             
