@@ -15,32 +15,23 @@ if __name__ == "__main__":
     # function = lambda x, y: np.power(x + 2 * y - 7, 2) + np.power(2 * x + y - 5, 2)
     # x_range = [-10, 10]
     # y_range = [-10, 10]
-    # pso = PSO(function, 30, [x_range[0], x_range[1]], [y_range[0], y_range[1]], 0.5, 2, 2, 30)
-
-    # f_name = "Goldstein–Price function"
-    # function = lambda x, y: (1 + np.power(x + y + 1, 2) * (
-    #             19 - 14 * x + 3 * np.power(x, 2) - 14 * y + 6 * x * y + 3 * np.power(y, 2))) \
-    #                         * (30 + np.power(2 * x - 3 * y, 2) * (
-    #             18 - 32 * x + 12 * np.power(x, 2) + 48 * y - 36 * x * y + 27 * np.power(y, 2)))
-    # x_range = [-5, 5]
-    # y_range = [-5, 5]
-    # pso = PSO(function, 30, [x_range[0], x_range[1]], [y_range[0], y_range[1]], 0.5, 2, 2, 30)
+    # pso = PSO(function, 109, [x_range[0], x_range[1]], [y_range[0], y_range[1]], 0.5, 2, 2, 30)
 
     # f_name = "Eggholder function"
     # function = lambda x, y: -(y + 47) * np.sin(np.sqrt(np.abs(x / 2 + (y + 47)))) - x * np.sin(
     #     np.sqrt(np.abs(x - (y + 47))))
     # x_range = [-520, 520]
     # y_range = [-520, 520]
-    # pso = PSO(function, 30, [x_range[0], x_range[1]], [y_range[0], y_range[1]], 0.5, 0.2, 0.2, 30)
+    # pso = PSO(function, 100, [x_range[0], x_range[1]], [y_range[0], y_range[1]], 0.5, 0.2, 0.2, 300)
 
     f_name = "Hölder table function"
     function = lambda x, y: -np.abs(
         np.sin(x) * np.cos(y) * np.exp(np.abs(1 - (np.sqrt(np.power(x, 2) + np.power(y, 2)) / np.pi))))
     x_range = [-10, 10]
     y_range = [-10, 10]
-    pso = PSO(function, 10, [x_range[0], x_range[1]], [y_range[0], y_range[1]], 0.1, 0.01, 0.01, 3000)
+    pso = PSO(function, 100, [x_range[0], x_range[1]], [y_range[0], y_range[1]], 0.1, 0.01, 0.01, 300)
 
-    step = 0.05
+    step = 0.5
 
     # chart before opt
     x = np.arange(x_range[0], x_range[1], step)
