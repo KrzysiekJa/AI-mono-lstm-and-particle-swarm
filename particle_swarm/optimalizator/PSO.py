@@ -78,5 +78,3 @@ class PSO:
                 self.g_best = self.particles[:, int(np.argmin(self.fun_values))]
             
             self.g_best_val = new_g_best_val
-            
-        
